@@ -263,7 +263,6 @@
         dir = dir == null ? 2 : dir > 3 ? 3 : dir;
         options = options || {}
         size = size || 5;
-        var text = ((typeof set_or_text) == 'string') ? this.text(x, y, set_or_text).attr(this.g.txtattr).attr({fill: "#fff", "font-family": "Helvetica, Arial"}) : set_or_text;
         var color = options.fill || '#000';
         var res = this.set(),
             d = 3,
@@ -271,6 +270,7 @@
             width = this.width,
             height = this.height;
         res.push(this.path().attr({fill:color, stroke:color}));
+        var text = ((typeof set_or_text) == 'string') ? this.text(x, y, set_or_text).attr(this.g.txtattr).attr({fill: "#fff", "font-family": "Helvetica, Arial"}) : set_or_text;
         res.push(text);
         res.update = function (X, Y, withAnimation) {
             X = X || x;
